@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./scripts/app.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <header class="mt-4 bg-green-800 p-4 text-white text-center">
+        <h1 class="text-4xl font-bold">Blackjack Game</h1>
+    </header>
+
+    <main class="flex-grow flex flex-col md:flex-row p-4 gap-4">
+        <section class="game-area flex-grow" aria-label="Game Table">
+            <div class="table-container bg-green-700 border-8 border-brown-600 rounded-3xl p-8 shadow-2xl">
+                <section class="dealer-area mb-8 border-b-4 border-dashed border-green-600 pb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-white">Dealer's Hand</h2>
+                    <ul class="flex gap-2 justify-center list-none" id="dealerCards" aria-label="Dealer's cards"></ul>
+                </section>
+
+                <section class="player-area mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-white">Your Hand</h2>
+                    <ul class="flex gap-2 justify-center list-none" id="playerCards" aria-label="Your cards"></ul>
+                </section>
+
+                <nav class="actions flex justify-center gap-4 mt-8" aria-label="Game actions">
+                    <button id="hitButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded shadow">
+                        Hit
+                    </button>
+                    <button id="standButton" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow">
+                        Stand
+                    </button>
+                    <button id="newGameButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow">
+                        New Game
+                    </button>
+                </nav>
+            </div>
+        </section>
+
+        <aside class="scoreboard md:w-64 bg-white p-4 rounded shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-green-800 underline">Scoreboard</h2>
+            <section class="current-score mb-4" id="scoreboard">
+                <p class="text-lg">Games Won: <span class="font-bold text-green-600">0</span></p>
+                <p class="text-lg">Games Drawn: <span class="font-bold text-gray-600">0</span></p>
+                <p class="text-lg">Games Lost: <span class="font-bold text-red-600">0</span></p>
+            </section>
+            
+            <section class="game-history">
+                <h3 class="text-xl font-semibold mb-2 text-green-800">Game History</h3>
+                <ol class="space-y-2 list-decimal list-inside" id="scoreHistory">
+                    <li class="text-gray-300 list-none"> No Games Played yet...</li>
+                </ol>
+            </section>
+        </aside>
+    </main>
+</body>
+</html>
+
